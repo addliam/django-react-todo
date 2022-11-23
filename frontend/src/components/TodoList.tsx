@@ -2,7 +2,12 @@ import React from 'react'
 import TodoItem from './TodoItem'
 import { Todo } from '../interfaces/Todo'
 
-const TodoList = () => {
+const TodoList = (props: any) => {
+    const todoListData = props.data?props.data:[]
+    console.log("todoListData")
+    console.log(todoListData)
+    
+    
     const sampleTodo: Todo = {
         title: 'Simple todo sample',
         description: 'description for sample',
@@ -13,7 +18,7 @@ const TodoList = () => {
         {
             Array(6).fill('x').map((item, indx)=>{
                 return (
-                    <TodoItem data={sampleTodo} />
+                    <TodoItem key={indx} data={sampleTodo} />
                 )
             })
         }

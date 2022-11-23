@@ -4,9 +4,9 @@ import TodoApp from './components/TodoApp'
 
 const App = () => {
   return (
-    <main>
+    <main className='min-h-screen'>
       <Header />
-      <TodoApp />
+      <TodoApp />    
     </main>
   )
 }
