@@ -3,22 +3,19 @@ import TodoItem from './TodoItem'
 import { Todo } from '../interfaces/Todo'
 
 const TodoList = (props: any) => {
-    const todoListData = props.data?props.data:[]
-    console.log("todoListData")
-    console.log(todoListData)
+    let todoListData: Todo[] = props.data?props.data:[]    
     
-    
-    const sampleTodo: Todo = {
-        title: 'Simple todo sample',
-        description: 'description for sample',
-        completed: false,
-    }
+    // const sampleTodo: Todo = {
+    //     title: 'Simple todo sample',
+    //     description: 'description for sample',
+    //     completed: false,
+    // }
   return (
     <div className='justify-center flex flex-row flex-wrap gap-x-6 gap-y-5'>
         {
-            Array(6).fill('x').map((item, indx)=>{
+            todoListData.map((item, indx)=>{
                 return (
-                    <TodoItem key={indx} data={sampleTodo} />
+                    <TodoItem key={indx} data={item} />
                 )
             })
         }
